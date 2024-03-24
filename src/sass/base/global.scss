@@ -29,3 +29,14 @@ a:hover {
         margin-bottom: 200px;
     }
 }
+
+.productName {
+    flex: 1;
+    border-bottom: 1px dotted #fff;
+}
+
+.productPrice {
+    width: 80px;
+    text-align: right;
+    border-bottom: 1px dotted #fff;
+}

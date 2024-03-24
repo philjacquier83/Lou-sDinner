@@ -1,6 +1,6 @@
 import MainHeader from '../components/MainHeader'
 import MainContainer from '../layouts/MainContainer'
-import Footer from '../components/Footer'
+import Footer from '../layouts/Footer'
 
 function Home() {
 

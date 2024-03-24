@@ -45,12 +45,14 @@
 .drinksSubList {
     display: flex;
     width: 100%;
-    justify-content: space-between;
 }
 
 .drinksCategory {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 .drinkProduct {
@@ -60,7 +62,6 @@
     align-items: center;
     width: 320px;
     height: 40px;
-    margin-right: 25px;
 }
 
 .subCategory {
