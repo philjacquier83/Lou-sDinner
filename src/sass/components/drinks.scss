@@ -1,6 +1,6 @@
 .drinksContainer {
-    width: 720px;
-    height: 480px;
+    width: 800px;
+    height: 520px;
     border-radius: 40px;
     background: #4CC9F0;
     border: 5px solid #EC398B;
@@ -8,7 +8,6 @@
     padding: 20px;
     box-sizing: border-box;
     position: relative;
-    margin: 120px 0;
     display: flex;
     justify-content: center;
 }
@@ -32,14 +31,26 @@
 
 .drinksList {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
+    width: 100%;
     height: 100%;
     padding-top: 30px;
     box-sizing: border-box;
     justify-content: center;
     align-items: center;
     font-size: 16px;
+}
+
+.drinksSubList {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.drinksCategory {
+    display: flex;
+    flex-direction: column;
 }
 
 .drinkProduct {
@@ -50,4 +61,13 @@
     width: 320px;
     height: 40px;
     margin-right: 25px;
+}
+
+.subCategory {
+    font-size: 24px;
+    width: 100%; 
+    padding-left: 20px;
+    box-sizing: border-box;
+    -webkit-text-stroke: 2px #EC398B;
+    text-shadow: 0 0 6px #b8145e;
 }

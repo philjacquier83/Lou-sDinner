@@ -15,7 +15,7 @@ function MilkShakes() {
 
     return (
 
-        <>
+        <div className="lousMenu">
             <div className="milkshakesContainer">
 
                 <div className="milkshakesTitle">Milk-shakes</div>
@@ -32,7 +32,7 @@ function MilkShakes() {
                     )}
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }

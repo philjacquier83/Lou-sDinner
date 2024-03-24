@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Drinks() {
 
     const drinks = [
@@ -35,7 +37,7 @@ function Drinks() {
 
     return (
 
-        <>
+        <div className="lousMenu">
             <div className="drinksContainer">
 
                 <div className="drinksTitle">Drinks</div>
@@ -44,23 +46,23 @@ function Drinks() {
                     
                     <div className="drinksSubList">
                         {drinks.map((sortOfDrink, index) =>
-                            <>
-                            <div key={`Category-${index}`}>{sortOfDrink.drinkCategory}</div>
-                            
-                            {sortOfDrink.drinkList.map((drink, id) =>
-                                <div className="drinksProduct" key={`${sortOfDrink.drinkCategory}-${id}`}>
-                                    <div className="productName">{drink.name}</div>
-                                    <div className="productPrice">{drink.price}</div>
-                                </div>
-                            )}
-                            </>
+                            <div className="drinksCategory">
+                                <div className="subCategory" key={`Category-${index}`}>{sortOfDrink.drinkCategory}</div>
+                                
+                                {sortOfDrink.drinkList.map((drink, id) =>
+                                    <Link to="/" className="drinkProduct" key={`${sortOfDrink.drinkCategory}-${id}`}>
+                                        <div className="productName">{drink.name}</div>
+                                        <div className="productPrice">{drink.price} $</div>
+                                    </Link>
+                                )}
+                            </div>
                         )}
 
                     </div>
                     
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }

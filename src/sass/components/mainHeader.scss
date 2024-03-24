@@ -1,3 +1,40 @@
+@keyframes blinkingNeon {
+    0% {
+        -webkit-text-stroke: 3px hsl(333, 82%, 57%);
+        text-shadow: 0 0 14px #b8145e;
+    }
+
+    25% {
+        -webkit-text-stroke: 3px hsl(333, 50%, 57%);
+        text-shadow: 0 0 2px #b8145e;
+    }
+
+    40% {
+        -webkit-text-stroke: 3px hsl(333, 62%, 57%);
+        text-shadow: 0 0 6px #b8145e;
+    }
+
+    60% {
+        -webkit-text-stroke: 3px hsl(333, 50%, 57%);
+        text-shadow: 0 0 2px #b8145e;
+    }
+
+    75% {
+        -webkit-text-stroke: 3px hsl(333, 62%, 57%);
+        text-shadow: 0 0 6px #b8145e;
+    }
+
+    90% {
+        -webkit-text-stroke: 3px hsl(333, 82%, 57%);
+        text-shadow: 0 0 12px #b8145e;
+    }
+
+    100% {
+        -webkit-text-stroke: 3px hsl(333, 82%, 57%);
+        text-shadow: 0 0 14px #b8145e;
+    }
+}
+
 .headerContainer {
     display: flex;
     flex-direction: column;
@@ -8,7 +45,9 @@
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
     background: #4CC9F0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
 
 .companyInfos {
@@ -16,7 +55,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px 0 30px;
+    padding: 0 30px;
     box-sizing: border-box;
     flex: 1;
 }
@@ -24,8 +63,9 @@
 .companyName {
     font-size: 40px;
     color: #ffd1e7;
-    -webkit-text-stroke: 3px #EC398B;
+    -webkit-text-stroke: 3px hsl(333, 82%, 57%);
     text-shadow: 0 0 6px #b8145e;
+    animation: blinkingNeon 2s ease infinite;
 }
 
 .companyContact {

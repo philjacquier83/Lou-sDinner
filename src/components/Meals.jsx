@@ -1,19 +1,21 @@
 function Meals() {
 
     const meals = [
-                        {name: 'Vanilla Shake', price: '3.99'},
-                        {name: 'Chocolate Shake', price: '3.99'},
-                        {name: 'Strawberry Shake', price: '3.99'},
-                        {name: 'Banana Shake', price: '4.29'},
-                        {name: 'Cookie &  Cream Shake', price: '4.99'},
-                        {name: 'Peanut Butter Shake', price: '4.99'},
-                        {name: 'Mint Chocolate Shake', price: '4.99'},
-                        {name: 'Blueberry Shake', price: '4.99'}
+                        {name: 'Cheeseburger with fries', price: '9.99'},
+                        {name: 'Hot dog', price: '5.99'},
+                        {name: 'Club Sandwich', price: '5.99'},
+                        {name: 'Pancakes', price: '5.99'},
+                        {name: 'Spaghetti Bolognese', price: '9.99'},
+                        {name: 'Macaroni & Cheese', price: '9.99'},
+                        {name: 'Tuna Melt', price: '9.99'},
+                        {name: 'Fried Chicken', price: '10.99'},
+                        {name: 'Meatloaf', price: '11.99'},
+                        {name: 'Fish & Chips', price: '11.99'}
                     ]
 
     return (
 
-        <>
+        <div className="lousMenu lousMenu--Meals">
             <div className="mealsContainer">
 
                 <div className="mealsTitle">Meals</div>
@@ -22,7 +24,7 @@ function Meals() {
 
                     {meals.map((meal, index) =>
                     
-                        <div className="mealsProduct" key={`meal-${index}`}>
+                        <div className="mealProduct" key={`meal-${index}`}>
                             <div className="productName">{meal.name}</div>
                             <div className="productPrice">{meal.price}</div>
                         </div>
@@ -30,7 +32,7 @@ function Meals() {
                     )}
                 </div>
             </div>
-        </>
+        </div>
 
     )
 }

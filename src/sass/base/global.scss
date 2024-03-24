@@ -9,3 +9,23 @@ a:hover {
     color: #EC398B;
     text-shadow: none;
 }
+
+.lousMenu {
+    display: flex;
+    padding: 0 8vw;
+    box-sizing: border-box;
+    justify-content: right;
+
+    &:nth-child(2) {
+        margin: 200px 0 0 0;
+    }
+
+    &:nth-child(odd) {
+        justify-content: left;
+        margin: 80px 0;
+    }
+
+    &--Meals {
+        margin-bottom: 200px;
+    }
+}
