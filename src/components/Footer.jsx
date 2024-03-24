@@ -3,7 +3,7 @@ function Footer() {
     return (
 
         <>
-        
+            <h1>bye</h1>
         </>
     )
 

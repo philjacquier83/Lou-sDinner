@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function MilkShakes() {
 
     const milkshakes = [
@@ -22,10 +24,10 @@ function MilkShakes() {
 
                     {milkshakes.map((milkshake, index) =>
                     
-                        <div className="milkshakeProduct" key={`milkshake-${index}`}>
+                        <Link className="milkshakeProduct" key={`milkshake-${index}`}>
                             <div className="productName">{milkshake.name}</div>
-                            <div className="productPrice">{milkshake.price}</div>
-                        </div>
+                            <div className="productPrice">{milkshake.price} $</div>
+                        </Link>
 
                     )}
                 </div>

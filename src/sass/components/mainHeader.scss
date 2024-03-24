@@ -1,0 +1,59 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #4CC9F0;
+}
+
+.companyInfos {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px 0 30px;
+    box-sizing: border-box;
+    flex: 1;
+}
+
+.companyName {
+    font-size: 40px;
+    color: #ffd1e7;
+    -webkit-text-stroke: 3px #EC398B;
+    text-shadow: 0 0 6px #b8145e;
+}
+
+.companyContact {
+    color: #EC398B;
+    font-size: 14px;
+}
+
+.colors80 {
+    height: 4px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to right,
+            #EC398B 7.5%,
+            #B5179E 15%,
+            #7209B7 22.5%,
+            #560BAD 27.5%,
+            #480CA8 32.5%,
+            #3A0CA3 37.5%,
+            #3F37C9 42.5%,
+            #4361EE 47.5%,
+            #4895EF 52.5%,
+            #4361EE 57.5%,
+            #3F37C9 62.5%,
+            #3A0CA3 67.5%,
+            #480CA8 72.5%,
+            #560BAD 77.5%,
+            #7209B7 82.5%,
+            #B5179E 92.5%,
+            #EC398B 100%);
+}

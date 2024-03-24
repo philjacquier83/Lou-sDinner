@@ -1,0 +1,11 @@
+a {
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 4px 4px rgba(0,0,0,0.25);
+}
+
+a:hover {
+    cursor: pointer;
+    color: #EC398B;
+    text-shadow: none;
+}

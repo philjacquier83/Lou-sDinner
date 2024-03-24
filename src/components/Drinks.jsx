@@ -2,7 +2,8 @@ function Drinks() {
 
     const drinks = [
                     {
-                        softs: [
+                        drinkCategory: "Softs",
+                        drinkList: [
                             {name: 'Coca-Cola', price: '2.99'},
                             {name: 'Pepsi-Cola', price: '2.99'},
                             {name: 'Sprite', price: '2.99'},
@@ -16,7 +17,8 @@ function Drinks() {
                         ]
                     },
                     {
-                        beers: [
+                        drinkCategory: "Beers",
+                        drinkList: [
                             {name: 'Budweiser', price: '2.49'},
                             {name: 'Coors', price: '2.49'},
                             {name: 'Schlitz', price: '2.49'},
@@ -31,20 +33,6 @@ function Drinks() {
                     }
                     ]
 
-    const softDrinks = drinks.softs.map((softDrink, index) => (
-        <div className="drinksProduct" key={`SoftDrink-${index}`} >
-            <div className="productName">{(softDrink.name).padEnd(25, '.')}</div>
-            <div key={`SoftDrink-${index}`} className="productPrice">{softDrink.price}</div>
-        </div>
-    ))
-
-    const beerDrinks= drinks.beers.map((beer, index) => (
-        <div className="drinksProduct" key={`Beer-${index}`}>
-            <div className="productName">{(beer.name).padEnd(25, '.')}</div>
-            <div className="productPrice">{beer.price}</div>
-        </div>
-    ))
-
     return (
 
         <>
@@ -55,18 +43,18 @@ function Drinks() {
                 <div className="drinksList">
                     
                     <div className="drinksSubList">
-                        Softs
-                        <div className="softDrinks">
-                            {softDrinks}
-                        </div>
-
-                    </div>
-                    
-                    <div className="drinksSubList">
-                        Beers
-                        <div className="beerDrinks">
-                            {beerDrinks}
-                        </div>
+                        {drinks.map((sortOfDrink, index) =>
+                            <>
+                            <div key={`Category-${index}`}>{sortOfDrink.drinkCategory}</div>
+                            
+                            {sortOfDrink.drinkList.map((drink, id) =>
+                                <div className="drinksProduct" key={`${sortOfDrink.drinkCategory}-${id}`}>
+                                    <div className="productName">{drink.name}</div>
+                                    <div className="productPrice">{drink.price}</div>
+                                </div>
+                            )}
+                            </>
+                        )}
 
                     </div>
                     
