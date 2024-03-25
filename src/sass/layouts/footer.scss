@@ -5,9 +5,21 @@
     bottom: 0;
     left: 0;
     color: #fff;
+    background: #4CC9F0;
     box-shadow: 0 0 10px rgba(0,0,0,0.25);
 }
 
-audio {
-    background-color: #4CC9F0;
+.jukebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+        font-size: 12px;
+    }
+}
+
+.forbiddenAction {
+    opacity: 0.2;
 }

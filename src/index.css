@@ -4,7 +4,11 @@
   font-weight: 400;
 
   color-scheme: light dark;
+  position: relative;
   background-color: #4CC9F0;
+  background-image: url('/src/assets/BG\ Lous\ Diner.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   padding: 0;
   margin: 0;
 }

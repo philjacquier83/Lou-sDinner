@@ -1,4 +1,4 @@
-import AudioPlayer from '../components/AudioPlayer.jsx'
+import AudioPlayer from '../components/AudioPlayer'
 
 function Footer() {
 
@@ -6,7 +6,7 @@ function Footer() {
 
         <>
             <div className="footer">
-                <AudioPlayer music="0" />
+                <AudioPlayer />
             </div>
         </>
     )
