@@ -18,6 +18,8 @@ function Meals() {
 
     const [ imagePreview, setImagePreview ] = useState('')
     const [ isContainerVisible, setContainerVisible ] = useState(false)
+    const [ productOrder, setProductOrder ] = useState(null)
+    const [ orderQuantity, setOrderQuantity ] = useState(1)
 
     const handleMouseOver = (imageName) => {
         setContainerVisible(true)
@@ -29,14 +31,40 @@ function Meals() {
         setImagePreview('')
     }
 
+    const handleOrder = (product) => {
+        setProductOrder(product)
+    }
+
+    const handleCloseOrder = () => {
+        setProductOrder(null)
+    }
+
+    const handleQuantity = () => {
+        setOrderQuantity(1)
+    }
+
+    const handleQuantityMore = () => {
+        setOrderQuantity(prev => prev + 1)
+    }
+
+    const handleQuantityLess = () => {
+        setOrderQuantity(prev => prev - 1)
+    }
+
     let productSelected = null
+    let productOrdered = null
 
     if(isContainerVisible) {
         productSelected = meals.find(elem => elem.name === imagePreview)
     }
 
+    if(productOrder !== null) {
+        productOrdered = meals.find(elem => elem.name === productOrder)
+    }
+
     return (
 
+        <>
         <div className="lousMenu lousMenu--Meals">
             
             <div className={`productContainer ${!isContainerVisible && 'productContainer--hidden'} productContainer--Meals`}>
@@ -55,7 +83,7 @@ function Meals() {
 
                     {meals.map((meal, index) =>
                     
-                        <Link to='/' className="mealProduct" key={`meal-${index}`} onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
+                        <Link to='/' className="mealProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)} onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
                             <div className="productName">{meal.name}</div>
                             <div className="productPrice">{meal.price} $</div>
                         </Link>
@@ -64,6 +92,34 @@ function Meals() {
                 </div>
             </div>
         </div>
+
+        {productOrdered &&
+        <div className="orderContainer">
+            {productOrdered &&
+            <>
+            <div className="order">
+            <div className="close" onClick={handleCloseOrder}>x</div>
+                    
+                <div className="imgOrder">
+                    <img src={`/src/assets/${productOrdered.image}`} />
+                </div>
+
+                <div className="orderDetails">
+                    <div className="orderName">{productOrdered.name}</div>
+                    <div className="orderQuantity">
+                        <button className={`less ${orderQuantity === 1 && 'forbiddenAction'}`} onClick={orderQuantity > 1 ? handleQuantityLess : ''}>-</button>
+                        <button className="quantity">{orderQuantity}</button>
+                        <button className="more" onClick={handleQuantityMore}>+</button>
+                    </div>
+                    <div onClick={handleQuantity}>Clear</div>
+                    <div className="orderPrice">{orderQuantity === 0 ? '0.00' : (Number(orderQuantity) * Number(productOrdered.price)).toFixed(2)} $</div>
+                </div>
+            </div>
+            </>
+            }
+        </div>
+        }
+        </>
 
     )
 }

@@ -11,4 +11,5 @@
   background-repeat: no-repeat;
   padding: 0;
   margin: 0;
+  filter: sepia(15%);
 }
