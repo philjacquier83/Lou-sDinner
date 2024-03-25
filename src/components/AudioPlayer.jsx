@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faBackward, faForward } from '@fortawesome/free-solid-svg-icons'
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 
 function AudioPlayer() {
 
@@ -16,7 +16,7 @@ function AudioPlayer() {
     ]
 
     const audioRef = useRef()
-    const [ isPlaying, setIsPlaying ] = useState(true)
+    const [ isPlaying, setIsPlaying ] = useState(false)
     const [ track, setTrack ] = useState(0)
     
     console.log(track)
@@ -52,18 +52,11 @@ function AudioPlayer() {
         setIsPlaying(!isPlaying)
     }
 
-    useEffect(() => {
-        if(audioRef.current) {
-            audioRef.current.play()
-        }
-        setIsPlaying(true)
-    }, [])
-
     return (
         <>
         <div className="jukebox">
             <div>
-                <audio className="audioPlayer" ref={audioRef} src={`/src/assets/${jukebox[track]}.mp3`} autoPlay onEnded={handleNextTrack} />
+                <audio className="audioPlayer" ref={audioRef} src={`/src/assets/${jukebox[track]}.mp3`} onEnded={handleNextTrack} autoPlay />
                 <button onClick={handlePreviousTrack}><FontAwesomeIcon icon={faBackward} className={`icon ${track === 0 && 'forbiddenAction'}`} /></button>
                 <button onClick={togglePlay}>{isPlaying ? <FontAwesomeIcon icon={faPause} className="icon" /> : <FontAwesomeIcon icon={faPlay} className="icon" />}</button>
                 <button onClick={handleNextTrack}><FontAwesomeIcon icon={faForward} className={`icon ${track === jukebox.length - 1 && 'forbiddenAction'}`} /></button>

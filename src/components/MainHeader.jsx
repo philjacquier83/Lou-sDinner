@@ -1,5 +1,3 @@
-
-
 function MainHeader() {
 
     return(
@@ -7,9 +5,9 @@ function MainHeader() {
         <>
             <div className="headerContainer">
                 <div className="companyInfos">
-                    <div className="companyName">Lou's diner</div>
+                    <div className="companyName">Lou&apos;s diner</div>
                     <div className="companyContact">
-                        Lou's Diner<br />
+                        Lou&apos;s Diner<br />
                         456 Desert Avenue<br />
                         Henderson, NV<br />
                         © 1982 - All rights reserved

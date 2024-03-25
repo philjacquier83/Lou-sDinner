@@ -5,8 +5,11 @@ function Footer() {
     return (
 
         <>
-            <div className="footer">
+            <div className="footer">               
+
+                <div className="colors80"></div>
                 <AudioPlayer />
+                
             </div>
         </>
     )
