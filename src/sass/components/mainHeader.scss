@@ -68,6 +68,17 @@
     animation: blinkingNeon 2s ease infinite;
 }
 
+.customerBill {
+    font-size: 16px;
+    color: #ffd1e7;
+    -webkit-text-stroke: 1px hsl(333, 82%, 57%);
+    text-shadow: 0 0 2px #b8145e;
+}
+
+.iconBill {
+    color: hsl(333, 82%, 57%);
+}
+
 .companyContact {
     color: #EC398B;
     font-size: 14px;

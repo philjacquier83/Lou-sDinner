@@ -1,5 +1,5 @@
-import { useState } from "react"
 import { Link } from "react-router-dom"
+import useMeals from "../hooks/useMeals"
 
 function Meals() {
 
@@ -16,40 +16,20 @@ function Meals() {
                         {name: 'Fish & Chips', price: '11.99', image: 'Fish And Chips.jpeg'}
                     ]
 
-    const [ imagePreview, setImagePreview ] = useState('')
-    const [ isContainerVisible, setContainerVisible ] = useState(false)
-    const [ productOrder, setProductOrder ] = useState(null)
-    const [ orderQuantity, setOrderQuantity ] = useState(1)
-
-    const handleMouseOver = (imageName) => {
-        setContainerVisible(true)
-        setImagePreview(imageName)
-    }
-
-    const handleMouseOut = () => {
-        setContainerVisible(false)
-        setImagePreview('')
-    }
-
-    const handleOrder = (product) => {
-        setProductOrder(product)
-    }
-
-    const handleCloseOrder = () => {
-        setProductOrder(null)
-    }
-
-    const handleQuantity = () => {
-        setOrderQuantity(1)
-    }
-
-    const handleQuantityMore = () => {
-        setOrderQuantity(prev => prev + 1)
-    }
-
-    const handleQuantityLess = () => {
-        setOrderQuantity(prev => prev - 1)
-    }
+    const { imagePreview, 
+            isContainerVisible, 
+            productOrder, 
+            orderQuantity, 
+            mealsSelected, 
+            handleMouseOver, 
+            handleMouseOut, 
+            handleOrder, 
+            handleCloseOrder, 
+            handleQuantity, 
+            handleQuantityMore, 
+            handleQuantityLess, 
+            handleMealsSelection } = useMeals()
+    
 
     let productSelected = null
     let productOrdered = null
@@ -61,7 +41,7 @@ function Meals() {
     if(productOrder !== null) {
         productOrdered = meals.find(elem => elem.name === productOrder)
     }
-
+    
     return (
 
         <>
@@ -83,8 +63,15 @@ function Meals() {
 
                     {meals.map((meal, index) =>
                     
-                        <Link to='/' className="mealProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)} onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
-                            <div className="productName">{meal.name}</div>
+                        <Link to='/' className="mealProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)}>
+                            <div className="productName" onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
+                                {meal.name}
+                                {mealsSelected.find(elem => elem.name === meal.name) && 
+                                    <span title="This meal has already been added !" className="alreadySelected">
+                                        {mealsSelected.find(elem => elem.name === meal.name).quantity}
+                                    </span>
+                                }
+                            </div>
                             <div className="productPrice">{meal.price} $</div>
                         </Link>
 
@@ -107,12 +94,15 @@ function Meals() {
                 <div className="orderDetails">
                     <div className="orderName">{productOrdered.name}</div>
                     <div className="orderQuantity">
-                        <button className={`less ${orderQuantity === 1 && 'forbiddenAction'}`} onClick={orderQuantity > 1 ? handleQuantityLess : ''}>-</button>
+                        <button className={`less ${orderQuantity === 0 && 'forbiddenAction'}`} onClick={orderQuantity > 0 ? handleQuantityLess : ''}>-</button>
                         <button className="quantity">{orderQuantity}</button>
                         <button className="more" onClick={handleQuantityMore}>+</button>
                     </div>
                     <div onClick={handleQuantity}>Clear</div>
-                    <div className="orderPrice">{orderQuantity === 0 ? '0.00' : (Number(orderQuantity) * Number(productOrdered.price)).toFixed(2)} $</div>
+                    <div className="orderPrice">Sub-Total : {orderQuantity === 0 ? '0.00' : (Number(orderQuantity) * Number(productOrdered.price)).toFixed(2)} $</div>
+                    <div className="add">
+                        <button onClick={() => handleMealsSelection(productOrdered.name, orderQuantity, (Number(orderQuantity) * Number(productOrdered.price)).toFixed(2))}>Add</button>
+                    </div>                        
                 </div>
             </div>
             </>
