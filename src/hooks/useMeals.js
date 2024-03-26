@@ -6,7 +6,7 @@ const useMeals = () => {
     const [ productOrder, setProductOrder ] = useState(null)
     const [ orderQuantity, setOrderQuantity ] = useState(0)
     const [ mealsSelected, setMealsSelected ] = useState([])
-    const [ mealsBill, setMealsBill ] = useState(0.00)
+    const [ mealsBill, setMealsBill ] = useState(0)
 
     
 console.log(mealsBill)
@@ -44,6 +44,7 @@ console.log(mealsBill)
 
     const handleMealsSelection = (productName, productQuantity, productSubTotal) => {
         if(mealsSelected.find(elem => elem.name === productName)) {
+            setMealsBill(prev => Number(prev) - Number(mealsSelected.find(elem => elem.name === productName).productSubTotal))
             const updatedMealSelection = mealsSelected.filter(elem => elem.name !== productName)
             setMealsSelected(updatedMealSelection)
         } 
@@ -54,7 +55,7 @@ console.log(mealsBill)
             setMealsBill(prev => Number(prev) + Number(productSubTotal))
         }
     }
-
+                
     return { imagePreview, isContainerVisible, productOrder, orderQuantity, mealsSelected, mealsBill, 
             handleMouseOver, handleMouseOut, handleOrder, handleCloseOrder, handleQuantity, handleQuantityMore, handleQuantityLess, handleMealsSelection }
 }
