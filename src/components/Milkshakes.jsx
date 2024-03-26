@@ -97,7 +97,7 @@ function MilkShakes() {
                         <button className="quantity">{orderQuantity}</button>
                         <button className="more" onClick={handleQuantityMore}>+</button>
                     </div>
-                    <div onClick={handleQuantity}>Clear</div>
+                    {orderQuantity > 0 && <div onClick={handleQuantity}>Clear</div> }
                     <div className="orderPrice">Sub-Total : {orderQuantity === 0 ? '0.00' : (Number(orderQuantity) * Number(productOrdered.price)).toFixed(2)} $</div>
                     <div className="add">
                         <button onClick={() => handleMilkshakesSelection(productOrdered.name, orderQuantity, (Number(orderQuantity) * Number(productOrdered.price)).toFixed(2))}>Add</button>
