@@ -236,3 +236,31 @@ a:hover {
         cursor: pointer;
     }
 }
+
+@media screen and (max-width: 1280px) {
+    .lousMenu {
+        display: flex;
+        padding: 0 2vw;
+        box-sizing: border-box;
+        justify-content: right;
+        align-items: center;
+        height: fit-content;
+
+        &:nth-child(2) {
+            margin: 200px 0 0 0;
+        }
+
+        &:nth-child(odd) {
+            justify-content: left;
+            margin: 80px 0;
+        }
+
+        &--Desserts {
+            margin-bottom: 200px;
+        }
+    }
+
+    .selectProduct {
+        width: 360px;        
+    }
+}
