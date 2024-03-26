@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom"
-import useMeals from "../hooks/useMeals"
+import useProducts from "../hooks/useProducts"
 
 function Meals() {
 
@@ -16,20 +15,23 @@ function Meals() {
                         {name: 'Fish & Chips', price: '11.99', image: 'Fish And Chips.jpeg'}
                     ]
 
-    const { imagePreview, 
-            isContainerVisible, 
-            productOrder, 
-            orderQuantity, 
-            mealsSelected, 
-            handleMouseOver, 
-            handleMouseOut, 
-            handleOrder, 
-            handleCloseOrder, 
-            handleQuantity, 
-            handleQuantityMore, 
-            handleQuantityLess, 
-            handleMealsSelection } = useMeals()
-    
+    const { imagePreview, isContainerVisible, productOrder, orderQuantity, mealsSelected, 
+            setProductOrder, setOrderQuantity, setMealsSelected, setTotalBill,
+            handleMouseOver, handleMouseOut, handleOrder,  handleCloseOrder, handleQuantity, handleQuantityMore, handleQuantityLess } = useProducts()
+
+    const handleMealsSelection = (productName, productQuantity, productSubTotal) => {
+        if(mealsSelected.find(elem => elem.name === productName)) {
+            setTotalBill(prev => Number(prev) - Number(mealsSelected.find(elem => elem.name === productName).productSubTotal))
+            const updatedMealSelection = mealsSelected.filter(elem => elem.name !== productName)
+            setMealsSelected(updatedMealSelection)
+        } 
+        if(productQuantity > 0) {
+            setMealsSelected(prev => [...prev, {name: productName, quantity: productQuantity, subTotal: productSubTotal}])
+            setProductOrder(null)
+            setOrderQuantity(1)
+            setTotalBill(prev => Number(prev) + Number(productSubTotal))
+        }
+    }
 
     let productSelected = null
     let productOrdered = null
@@ -63,7 +65,7 @@ function Meals() {
 
                     {meals.map((meal, index) =>
                     
-                        <Link to='/' className="mealProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)}>
+                        <div className="selectProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)}>
                             <div className="productName" onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
                                 {meal.name}
                                 {mealsSelected.find(elem => elem.name === meal.name) && 
@@ -73,7 +75,7 @@ function Meals() {
                                 }
                             </div>
                             <div className="productPrice">{meal.price} $</div>
-                        </Link>
+                        </div>
 
                     )}
                 </div>

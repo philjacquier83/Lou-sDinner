@@ -1,4 +1,4 @@
-import useMeals from "../hooks/useMeals"
+import useMeals from "../hooks/useProducts"
 
 function MainHeader() {
 
