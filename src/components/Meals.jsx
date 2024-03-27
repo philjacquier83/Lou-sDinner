@@ -49,14 +49,6 @@ function Meals() {
         <>
         <div className="lousMenu lousMenu--Meals">
             
-            <div className={`productContainer ${!isContainerVisible && 'productContainer--hidden'} productContainer--Meals`}>
-                {productSelected &&
-                    <div className="productImg">
-                        <img id="imagePreview" src={`/src/assets/${productSelected.image}`} />
-                    </div>
-                }
-            </div>
-            
             <div className="mealsContainer">
 
                 <div className="mealsTitle">Meals</div>
@@ -80,6 +72,14 @@ function Meals() {
                     )}
                 </div>
             </div>
+            
+            <div className={`productContainer ${!isContainerVisible && 'productContainer--hidden'} productContainer--Meals`}>
+                {productSelected &&
+                    <div className="productImg">
+                        <img id="imagePreview" src={`/src/assets/${productSelected.image}`} />
+                    </div>
+                }
+            </div>           
         </div>
 
         {productOrdered &&

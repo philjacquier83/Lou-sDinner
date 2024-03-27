@@ -1,9 +1,9 @@
 .drinksContainer {
     width: 800px;
-    height: 520px;
+    height: 280px;
     border-radius: 40px;
-    background: #4CC9F0;
-    border: 5px solid #EC398B;
+    background: #EC398B;
+    border: 5px solid #4CC9F0;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.75);
     padding: 20px;
     box-sizing: border-box;
@@ -14,19 +14,17 @@
 
 .drinksTitle {
     width: 240px;
-    height: 60px;
-    background: #9F138A;
-    border: 2px solid #3A0CA3;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    height: 40px;
+    color: #ffd1e7;
+    -webkit-text-stroke: 2px hsl(194, 85%, 62%);
+    text-shadow: 0 0 6px #1483a5;
     font-size: 24px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: -30px;
-    left: 60px;
-    text-shadow: 0 4px 4px rgba(0,0,0,0.25);
+    left: 25%;
 }
 
 .drinksList {
@@ -40,6 +38,10 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
+
+    .selectProduct:hover {
+        -webkit-text-stroke: 1px hsl(194, 85%, 62%); 
+    }
 }
 
 .drinksSubList {
@@ -76,7 +78,7 @@
 @media screen and (max-width: 1280px) {
     .drinksContainer {
         width: 440px;
-        height: 1000px;
+        height: 520px;
     }
 
     .drinksTitle {

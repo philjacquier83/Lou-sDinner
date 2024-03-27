@@ -38,6 +38,10 @@
     justify-content: center;
     align-items: center;
     font-size: 16px;
+
+    .selectProduct:hover {
+        -webkit-text-stroke: 1px hsl(333, 82%, 57%); 
+    }
 }
 
 .dessertProduct {

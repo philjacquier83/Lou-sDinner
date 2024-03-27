@@ -34,13 +34,11 @@ a:hover {
 
 .productName {
     flex: 1;
-    border-bottom: 1px dotted #fff;
 }
 
 .productPrice {
     width: 80px;
     text-align: right;
-    border-bottom: 1px dotted #fff;
 }
 
 .productContainer {
@@ -56,22 +54,25 @@ a:hover {
     position: relative;
     flex-direction: column;
     justify-content: center;
+    margin-left: 0;
     margin-right: 60px;
 
     &--Meals {
         height: 280px;
+        margin-right: 0;
+        margin-left: 60px;
+        border: 5px solid #4CC9F0;
     }
 
     &--Drinks {
-        height: 480px;
+        height: 280px;
         margin-right: 0;
         margin-left: 60px;
+        border: 5px solid #4CC9F0;
     }
 
-    &--Desserts {
-        height: 240px;
-        margin-right: 0;
-        margin-left: 60px;
+    &--Beers {
+        height: 300px;
     }
 
     &--hidden {
@@ -228,9 +229,10 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: end;
     width: 320px;
     height: 40px;
+    border-bottom: 1px dotted #fff;
     
     &:hover {
         cursor: pointer;
@@ -262,5 +264,32 @@ a:hover {
 
     .selectProduct {
         width: 360px;        
+    }
+
+    .productContainer {
+
+        height: 440px;
+
+        &--Drinks {
+            height: 520px;
+        }
+        
+        &--Beers {
+            height: 560px;
+        }
+        
+        &--Meals {
+            height: 520px;
+        }
+        
+        &--Desserts {
+            height: 440px;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .productContainer {
+        display: none;
     }
 }

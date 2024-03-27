@@ -7,6 +7,7 @@ const useProducts = () => {
     const [ orderQuantity, setOrderQuantity ] = useState(1)
     const [ milkshakesSelected, setMilkshakesSelected ] = useState([])
     const [ drinksSelected, setDrinksSelected ] = useState([])
+    const [ beersSelected, setBeersSelected ] = useState([])
     const [ mealsSelected, setMealsSelected ] = useState([])
     const [ dessertsSelected, setDessertsSelected ] = useState([])
     const [ totalBill, setTotalBill ] = useState(0)
@@ -45,8 +46,8 @@ console.log(totalBill)
         setOrderQuantity(prev => prev - 1)
     }
                 
-    return { imagePreview, isContainerVisible, productOrder, orderQuantity, milkshakesSelected, drinksSelected, mealsSelected, dessertsSelected, totalBill, 
-            setImagePreview, setContainerVisible, setProductOrder, setOrderQuantity, setMilkshakesSelected, setDrinksSelected, setMealsSelected, setDessertsSelected, setTotalBill,
+    return { imagePreview, isContainerVisible, productOrder, orderQuantity, milkshakesSelected, drinksSelected, beersSelected, mealsSelected, dessertsSelected, totalBill, 
+            setImagePreview, setContainerVisible, setProductOrder, setOrderQuantity, setMilkshakesSelected, setDrinksSelected, setBeersSelected, setMealsSelected, setDessertsSelected, setTotalBill,
             handleMouseOver, handleMouseOut, handleOrder, handleCloseOrder, handleQuantity, handleQuantityMore, handleQuantityLess }
 }
 

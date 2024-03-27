@@ -46,6 +46,15 @@ function Desserts() {
 
         <>
         <div className="lousMenu lousMenu--Desserts">
+
+            <div className={`productContainer ${!isContainerVisible && 'productContainer--hidden'} productContainer--Desserts`}>
+                {productSelected &&
+                    <div className="productImg">
+                        <img id="imagePreview" src={`/src/assets/${productSelected.image}`} />
+                    </div>
+                }
+            </div>
+            
             <div className="dessertsContainer">
 
                 <div className="dessertsTitle">Desserts</div>
@@ -68,14 +77,6 @@ function Desserts() {
 
                     )}
                 </div>
-            </div>
-
-            <div className={`productContainer ${!isContainerVisible && 'productContainer--hidden'} productContainer--Desserts`}>
-                {productSelected &&
-                    <div className="productImg">
-                        <img id="imagePreview" src={`/src/assets/${productSelected.image}`} />
-                    </div>
-                }
             </div>
             
         </div>
