@@ -1,6 +1,6 @@
 .drinksContainer {
     width: 800px;
-    height: 280px;
+    height: 320px;
     border-radius: 40px;
     background: #EC398B;
     border: 5px solid #4CC9F0;
@@ -13,7 +13,7 @@
 }
 
 .drinksTitle {
-    width: 240px;
+    width: 100%;
     height: 40px;
     color: #ffd1e7;
     -webkit-text-stroke: 2px hsl(194, 85%, 62%);
@@ -24,15 +24,14 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    left: 25%;
 }
 
 .drinksList {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    width: 100%;
     height: 100%;
+    width: 100%;
     padding-top: 30px;
     box-sizing: border-box;
     justify-content: center;
@@ -44,37 +43,6 @@
     }
 }
 
-.drinksSubList {
-    display: flex;
-    width: 100%;
-}
-
-.drinksCategory {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    justify-content: center;
-    align-items: center;
-}
-
-.drinkProduct {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 320px;
-    height: 40px;
-}
-
-.subCategory {
-    font-size: 24px;
-    width: 100%; 
-    padding-left: 20px;
-    box-sizing: border-box;
-    -webkit-text-stroke: 2px #EC398B;
-    text-shadow: 0 0 6px #b8145e;
-}
-
 @media screen and (max-width: 1280px) {
     .drinksContainer {
         width: 440px;
@@ -84,27 +52,5 @@
     .drinksTitle {
         width: 50%;
         left: 25%;
-    }
-
-    .drinksSubList {
-        flex-direction: column;
-    }
-
-    .drinksCategory {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        top: -40px;
-    }
-
-    .subCategory {
-        font-size: 24px;
-        width: 100%; 
-        margin-top: 40px;
-        -webkit-text-stroke: 2px #EC398B;
-        text-shadow: 0 0 6px #b8145e;
     }
 }

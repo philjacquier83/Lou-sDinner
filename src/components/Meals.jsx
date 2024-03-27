@@ -57,12 +57,12 @@ function Meals() {
 
                     {meals.map((meal, index) =>
                     
-                        <div className="selectProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)}>
-                            <div className="productName" onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
+                        <div className="selectProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)} onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
+                            <div className="productName">
                                 {meal.name}
                                 {mealsSelected.find(elem => elem.name === meal.name) && 
                                     <span title="This meal has already been added !" className="alreadySelected">
-                                        {mealsSelected.find(elem => elem.name === meal.name).quantity}
+                                        x {mealsSelected.find(elem => elem.name === meal.name).quantity}
                                     </span>
                                 }
                             </div>

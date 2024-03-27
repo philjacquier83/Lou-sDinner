@@ -62,8 +62,8 @@ function MilkShakes() {
 
                     {milkshakes.map((milkshake, index) =>
                     
-                        <div className="selectProduct" key={`milkshake-${index}`} onClick={() => handleOrder(milkshake.name)}>
-                            <div className="productName" onMouseOver={() => handleMouseOver(milkshake.name)} onMouseOut={handleMouseOut}>
+                        <div className="selectProduct" key={`milkshake-${index}`} onClick={() => handleOrder(milkshake.name)} onMouseOver={() => handleMouseOver(milkshake.name)} onMouseOut={handleMouseOut}>
+                            <div className="productName">
                                 {milkshake.name}
                                 {milkshakesSelected.find(elem => elem.name === milkshake.name) && 
                                     <span title="This meal has already been added !" className="alreadySelected">
