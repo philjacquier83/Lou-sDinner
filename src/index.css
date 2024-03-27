@@ -8,7 +8,7 @@
   background-color: #4CC9F0;
   background-image: url('/src/assets/BG\ Lous\ Diner.png');
   background-attachment: fixed;
-  background-repeat: no-repeat;
+  background-size: cover;
   padding: 0;
   margin: 0;
   filter: sepia(15%);

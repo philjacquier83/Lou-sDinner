@@ -62,12 +62,12 @@ function MilkShakes() {
 
                     {milkshakes.map((milkshake, index) =>
                     
-                        <div className="selectProduct" key={`milkshake-${index}`} onClick={() => handleOrder(milkshake.name)} onMouseOver={() => handleMouseOver(milkshake.name)} onMouseOut={handleMouseOut}>
+                        <div className="selectProduct" key={`milkshake-${index}`} onClick={() => handleOrder('milkshakesSelected', milkshake.name)} onMouseOver={() => handleMouseOver(milkshake.name)} onMouseOut={handleMouseOut}>
                             <div className="productName">
                                 {milkshake.name}
                                 {milkshakesSelected.find(elem => elem.name === milkshake.name) && 
                                     <span title="This meal has already been added !" className="alreadySelected">
-                                        {milkshakesSelected.find(elem => elem.name === milkshake.name).quantity}
+                                        x {milkshakesSelected.find(elem => elem.name === milkshake.name).quantity}
                                     </span>
                                 }
                             </div>

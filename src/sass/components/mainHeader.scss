@@ -84,6 +84,10 @@
     font-size: 14px;
 }
 
+.findUs {
+    display: none;
+}
+
 .colors80 {
     height: 4px;
     width: 100%;
@@ -107,4 +111,14 @@
             #7209B7 84%,
             #B5179E 92%,
             #EC398B 100%);
+}
+
+@media screen and (max-width:768px) {
+    .address {
+        display: none;
+    }
+
+    .findUs {
+        display: flex;
+    }
 }

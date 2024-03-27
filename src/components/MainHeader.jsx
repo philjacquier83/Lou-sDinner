@@ -12,10 +12,13 @@ console.log(`Hello = ${mealsBill}`)
                     <div className="companyName">Lou&apos;s diner</div>
                     
                     <div className="companyContact">
-                        Lou&apos;s Diner<br />
-                        456 Desert Avenue<br />
-                        Henderson, NV<br />
-                        © 1982 - All rights reserved
+                        <div className="address">
+                            Lou&apos;s Diner<br />
+                            456 Desert Avenue<br />
+                            Henderson, NV<br />
+                            © 1982 - All rights reserved
+                        </div>
+                        <div className="findUs">Find us</div>
                     </div>
                     
                     

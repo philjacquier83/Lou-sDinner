@@ -57,7 +57,7 @@ function Meals() {
 
                     {meals.map((meal, index) =>
                     
-                        <div className="selectProduct" key={`meal-${index}`} onClick={() => handleOrder(meal.name)} onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
+                        <div className="selectProduct" key={`meal-${index}`} onClick={() => handleOrder('mealsSelected', meal.name)} onMouseOver={() => handleMouseOver(meal.name)} onMouseOut={handleMouseOut}>
                             <div className="productName">
                                 {meal.name}
                                 {mealsSelected.find(elem => elem.name === meal.name) && 

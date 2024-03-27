@@ -24,9 +24,9 @@ console.log(totalBill)
         setImagePreview('')
     }
 
-    const handleOrder = (product) => {
+    const handleOrder = (category, product) => {
         setProductOrder(product)
-        setOrderQuantity(mealsSelected.find(elem => elem.name === product) ? mealsSelected.find(elem => elem.name === product).quantity : 0)
+        setOrderQuantity(eval(category).find(elem => elem.name === product) ? eval(category).find(elem => elem.name === product).quantity : 1)
     }
 
     const handleCloseOrder = () => {
