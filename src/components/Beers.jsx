@@ -69,7 +69,7 @@ function Beers() {
                             <div className="productName">
                                 <div>{beer.name}</div>
                                 {beersSelected.find(elem => elem.name === beer.name) && 
-                                    <div title="This meal has already been added !" className="alreadySelected">
+                                    <div title="This beer has already been added !" className="alreadySelected">
                                         {beersSelected.find(elem => elem.name === beer.name).quantity}
                                     </div>
                                 }
