@@ -64,11 +64,11 @@ function MilkShakes() {
                     
                         <div className="selectProduct" key={`milkshake-${index}`} onClick={() => handleOrder('milkshakesSelected', milkshake.name)} onMouseOver={() => handleMouseOver(milkshake.name)} onMouseOut={handleMouseOut}>
                             <div className="productName">
-                                {milkshake.name}
+                                <div>{milkshake.name}</div>
                                 {milkshakesSelected.find(elem => elem.name === milkshake.name) && 
-                                    <span title="This meal has already been added !" className="alreadySelected">
-                                        x {milkshakesSelected.find(elem => elem.name === milkshake.name).quantity}
-                                    </span>
+                                    <div title="This meal has already been added !" className="alreadySelected">
+                                        {milkshakesSelected.find(elem => elem.name === milkshake.name).quantity}
+                                    </div>
                                 }
                             </div>
                             <div className="productPrice">{milkshake.price} $</div>

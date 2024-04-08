@@ -67,11 +67,11 @@ function Beers() {
 
                         <div className="selectProduct" key={`beer-${index}`} onClick={() => handleOrder('beersSelected', beer.name)} onMouseOver={() => handleMouseOver(beer.name)} onMouseOut={handleMouseOut}>
                             <div className="productName">
-                                {beer.name}
+                                <div>{beer.name}</div>
                                 {beersSelected.find(elem => elem.name === beer.name) && 
-                                    <span title="This meal has already been added !" className="alreadySelected">
-                                        x {beersSelected.find(elem => elem.name === beer.name).quantity}
-                                    </span>
+                                    <div title="This meal has already been added !" className="alreadySelected">
+                                        {beersSelected.find(elem => elem.name === beer.name).quantity}
+                                    </div>
                                 }
                             </div>
                             <div className="productPrice">{beer.price} $</div>

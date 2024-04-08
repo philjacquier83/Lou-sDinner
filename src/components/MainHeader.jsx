@@ -9,7 +9,7 @@ console.log(`Hello = ${mealsBill}`)
         <>
             <div className="headerContainer">
                 <div className="companyInfos">
-                    <div className="companyName">Lou&apos;s diner</div>
+                    <div className="companyName">Lou&apos;s Diner</div>
                     
                     <div className="companyContact">
                         <div className="address">
